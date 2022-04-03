@@ -112,15 +112,15 @@ namespace GradeBook.GradeBooks
             switch (letterGrade)
             {
                 case 'A':
-                    return 4;
+                    return IsWeighted ? (studentType.ToString() == "Honors" || studentType.ToString() == "DualEnrolled" ? 5 : 4) : 4;
                 case 'B':
-                    return 3;
+                    return IsWeighted ? (studentType.ToString() == "Honors" || studentType.ToString() == "DualEnrolled" ? 4 : 3) : 3;
                 case 'C':
-                    return 2;
+                    return IsWeighted ? (studentType.ToString() == "Honors" || studentType.ToString() == "DualEnrolled" ? 3 : 2) : 2;
                 case 'D':
-                    return 1;
+                    return IsWeighted ? (studentType.ToString() == "Honors" || studentType.ToString() == "DualEnrolled" ? 2 : 1) : 1;
                 case 'F':
-                    return 0;
+                    return IsWeighted ? (studentType.ToString() == "Honors" || studentType.ToString() == "DualEnrolled" ? 1 : 0) : 0;
             }
             return 0;
         }
