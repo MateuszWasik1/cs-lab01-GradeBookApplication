@@ -14,12 +14,12 @@ namespace GradeBook.GradeBooks
         {
             Type = GradeBookType.Ranked;
         }
-        //public override char GetLetterGrade(double averageGrade)
-        //{
-        //    if (Students.Count() < 5)
-        //       throw new InvalidOperationException();
-        //    return base.GetLetterGrade(averageGrade);
-        //}
+        public override char GetLetterGrade(double averageGrade)
+        {
+            if (Students.Count() < 5)
+               throw new InvalidOperationException();
+            return char.Parse("F");
+        }
         public override void CalculateStatistics()
         {
             if (Students.Count() < 5)
